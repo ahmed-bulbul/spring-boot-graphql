@@ -1,0 +1,29 @@
+
+
+type Query {
+  allPlayers: [Player]
+}
+
+
+type Mutation {
+  addPlayer(name: String!, surname:String!, position_id: ID!): Player!
+  addPosition(pointGuard: String!, shootingGuard: String!, smallForward: String!, powerForward: String!, center: String!): Position!
+  deletePlayer(id: ID!): Boolean
+}
+
+
+type Player {
+  id: ID
+  name: String!
+  surname: String!
+  position: Position!
+}
+
+type Position {
+  id: ID
+  pointGuard: String!
+  shootingGuard: String!
+  smallForward: String!
+  powerForward: String!
+  center: String!
+}
