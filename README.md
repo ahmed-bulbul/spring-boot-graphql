@@ -1,5 +1,7 @@
 # spring-boot-graphql
 
+```text
+
 # mutation{
 #   addPosition(pointGuard:"No",shootingGuard:"Yes",smallForward:"No",powerForward:"No"
 #     ,center:"No"){
@@ -31,5 +33,15 @@
 # mutation{
 #   deletePlayer(id:1)
 # }
+
+
+
+
+
+
+
+```
+
+
 
 
