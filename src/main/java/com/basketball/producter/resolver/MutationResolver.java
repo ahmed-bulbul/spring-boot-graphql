@@ -47,8 +47,17 @@ public class MutationResolver implements GraphQLMutationResolver {
 
 
     public Boolean deletePlayer(Integer id) {
-        playerRepository.deleteById(id);
-        return true;
+        try {
+            Player player = playerRepository.findById(id).orElseGet(null);
+            if (player != null) {
+                playerRepository.delete(player);
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
+        return false;
     }
 
 
