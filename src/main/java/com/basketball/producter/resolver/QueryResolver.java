@@ -23,7 +23,11 @@ public class QueryResolver implements GraphQLQueryResolver {
 
     // list of all players
     public List<Player> allPlayers() {
-        return playerRepository.findAll();
+        List<Player> players = playerRepository.findAll();
+        if (players.size() > 0) {
+            return players;
+        }
+        return null;
     }
 
 

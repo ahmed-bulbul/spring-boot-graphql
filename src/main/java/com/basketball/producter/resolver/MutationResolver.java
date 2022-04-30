@@ -51,13 +51,13 @@ public class MutationResolver implements GraphQLMutationResolver {
             Player player = playerRepository.findById(id).orElseGet(null);
             if (player != null) {
                 playerRepository.delete(player);
+                return true;
             }else {
                 return false;
             }
         }catch (Exception e){
             return false;
         }
-        return false;
     }
 
 
